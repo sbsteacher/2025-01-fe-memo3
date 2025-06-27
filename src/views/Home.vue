@@ -16,11 +16,15 @@ const getItems = async params => {
   state.memos = data.resultData;
   console.log('state.memos :', state.memos);
 };
+
+const deleteItem = async (id) => {
+  console.log('deleteItem: ', id);
+}
 </script>
 
 <template>
   <div class="memo-list">
-    <MemoCard v-for="m in state.memos" :item="m" />
+    <MemoCard v-for="m in state.memos" :item="m" @delete-item="deleteItem" :key="m.id" />
 
     <router-link to="/memos/add" class="add btn btn-light">
       + 추가하기

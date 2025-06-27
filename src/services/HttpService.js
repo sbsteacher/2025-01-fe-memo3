@@ -32,6 +32,8 @@ class HttpService {
 
     async deleteMemo(params) {
         console.log('deleteMemo - params: ', params);
+        const res = await axios.delete('/memo', { params });
+        return res.data;
     }
 }
 
