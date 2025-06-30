@@ -24,7 +24,7 @@ const deleteItem = async (id) => {
 
 <template>
   <div class="memo-list">
-    <MemoCard v-for="m in state.memos" :item="m" @delete-item="deleteItem" :key="m.id" />
+    <MemoCard v-for="m in state.memos" :item="m" :key="m.id" />
 
     <router-link to="/memos/add" class="add btn btn-light">
       + 추가하기

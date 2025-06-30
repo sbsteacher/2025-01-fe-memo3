@@ -3,18 +3,18 @@ import httpService from '@/services/HttpService';
 
 const props = defineProps({
     item: Object,
-    deleteItem: Function
+   // deleteItem: Function
 });
 
 //삭제버튼 누르면 콘솔에 id값 출력되게 해주세요.
-// const remove = async () => {
-//     console.log('id:', props.item.id);
-//     if(confirm('삭제하시겠습니까?')) {
-//         console.log('삭제하겠다.');
-//         const params = { memo_id: props.item.id };
-//         const data = httpService.deleteMemo( params );
-//     }    
-// }
+const remove = async () => {
+    console.log('id:', props.item.id);
+    if(confirm('삭제하시겠습니까?')) {
+        console.log('삭제하겠다.');
+        const params = { memo_id: props.item.id };
+        const data = httpService.deleteMemo( params );
+    }    
+}
 </script>
 
 <template>
@@ -24,7 +24,7 @@ const props = defineProps({
           <div class="d-flex justify-content-between">
             <b>{{ props.item.title }}</b>
             <div>
-              <span role="button" @click.prevent="$emit('deleteItem', props.item.id)">삭제</span>
+              <span role="button" @click.prevent="remove">삭제</span>
             </div>
           </div>          
         </div>
