@@ -52,7 +52,7 @@ const removeItem = async id => {
 </template>
 
 <style lang="scss" scoped>
-/*
+
 .memo-list {
   .item {
     background-color: #f8f9fa;
@@ -68,7 +68,7 @@ const removeItem = async id => {
     }
   }
 }
-*/
+
 .add {
   display: block;
   padding: 25px;
